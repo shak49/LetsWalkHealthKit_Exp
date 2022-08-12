@@ -19,14 +19,15 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List(self.steps, id: \.id) { step in
-                VStack(alignment: .leading) {
-                    Text("\(step.count)")
-                    Text(step.date, style: .date)
-                        .opacity(0.5)
-                }
-            }
-            .listStyle(.plain)
+            GraphView(steps: self.steps)
+//            List(self.steps, id: \.id) { step in
+//                VStack(alignment: .leading) {
+//                    Text("\(step.count)")
+//                    Text(step.date, style: .date)
+//                        .opacity(0.5)
+//                }
+//            }
+//            .listStyle(.plain)
             .navigationBarTitle(Text("Steps"))
         }
             .onAppear {
